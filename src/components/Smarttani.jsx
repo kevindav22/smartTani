@@ -1,7 +1,7 @@
 import React from 'react';
 const SmartTani = () => {
   return (
-    <div className="bg-green-200 p-6 rounded-xl shadow-lg mx-14 ">
+    <div className="bg-green-200 p-6 rounded-xl shadow-lg mx-14 my-16 ">
       <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">
         Smart<span className="text-orange-500">TANI</span>
       </h2>

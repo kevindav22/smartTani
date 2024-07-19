@@ -5,7 +5,7 @@ import tani2 from '../../assets/tani2.jpg';
 import tani3 from '../../assets/tani3.jpg';
 
 const LatestNews = () => {
-  const [visibleNewsCount, setVisibleNewsCount] = useState(3);
+  const [visibleNewsCount, setVisibleNewsCount] = useState(4);
 
   const newsItems = [
     {
@@ -44,8 +44,9 @@ const LatestNews = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4">Berita Terkini</h2>
         <p className="text-center text-gray-700 mb-12">Dapatkan Informasi terkini seputar Pertanian</p>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="col-span-1">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
+          {/* Kolom Berita Besar */}
+          <div>
             <NewsCard
               image={newsItems[0].image}
               title={newsItems[0].title}
@@ -53,7 +54,8 @@ const LatestNews = () => {
               isLarge={true}
             />
           </div>
-          <div className="col-span-2">
+          {/* Kolom Berita Kecil */}
+          <div className="lg:col-span-2">
             {newsItems.slice(1, visibleNewsCount).map((newsItem, index) => (
               <NewsCard
                 key={index}
@@ -65,6 +67,7 @@ const LatestNews = () => {
             ))}
           </div>
         </div>
+        {/* Tombol Lihat Lebih Banyak */}
         {visibleNewsCount < newsItems.length && (
           <div className="text-center mt-8">
             <button onClick={handleLoadMore} className="text-green-600 font-semibold">
@@ -75,6 +78,7 @@ const LatestNews = () => {
       </div>
     </div>
   );
+  
 };
 
 export default LatestNews;
